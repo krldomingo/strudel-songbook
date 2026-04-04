@@ -4,7 +4,7 @@ setcpm(138/4)
 const dbank = "mc303"
 
 let kick = s("[bd - - - - - - bd - - bd - - - - -]").bank(dbank)
-let clap = s("[- - - - cp - - - - - - - cp:2 - - -]").bank(dbank).decay(0.2)
+let snare = s("[- - - - sd - - - - - - - sd:2 - - -]").bank(dbank).decay(0.2)
 let hat = s("[hh hh - - hh hh - - hh - - - hh - - -]").velocity("[1 0.3!3]*4").gain(0.2).bank(dbank)
 let openhat = s("- - oh - - - oh - - - oh - - - oh -").decay(0.2).gain(0.1).bank(dbank)
 let rim = s("- - - rim:2 - - - - - rim:2 - - - - - rim:2").gain(0.2).bank(dbank)
@@ -14,7 +14,7 @@ stack(hat
       , openhat
       , rim
       , kick
-      , clap
+      , snare
      ).room(0.05)._scope()
 
 chords:
