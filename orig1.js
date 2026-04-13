@@ -5,17 +5,18 @@ const dbank = "mc303"
 
 let kick = s("[bd - - - - - - bd - - bd - - - - -]").bank(dbank)
 let snare = s("[- - - - sd - - - - - - - sd:2 - - -]").bank(dbank).decay(0.2)
-let hat = s("[hh hh - - hh hh - - hh - - - hh - - -]").velocity("[1 0.3!3]*4").gain(0.2).bank(dbank)
+let hat = s("[hh - - - hh hh - - hh - - - hh - - hh]").velocity("[1 0.3!3]*4").gain(0.2).bank(dbank)
 let openhat = s("- - oh - - - oh - - - oh - - - oh -").decay(0.2).gain(0.1).bank(dbank)
-let rim = s("- - - rim:2 - - - - - rim:2 - - - - - rim:2").gain(0.2).bank(dbank)
+let rim = s("- rim:8 - - - - - rim:2 - rim:2 - - - - - -").gain(0.2).bank(dbank)
 
 drums:
-stack(hat
-      , openhat
+stack(openhat
+      , hat
       , rim
       , kick
       , snare
-     ).room(0.05)._scope()
+     ).room(0.05).swing(8)
+  ._scope()
 
 chords:
 chord("[Am7!2 - Am!2 - Cm9 -]!3 [Am7!2 - Am7!2 - E7@2]")
